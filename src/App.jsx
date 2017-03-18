@@ -14,13 +14,14 @@ const App = observer(class App extends Component {
       <div className="container">
         <DevTools />
         <div className="row">
-          <div className="one columns"><br></br></div>
-          <div className="nine columns">
-            <h3 className="center"> Save files to Dropbox </h3>
-            <form onSubmit={this.addTorrent}>
-              <label htmlFor="magnet_link">Magnet Link</label>
-              <input className="u-full-width" type="text" placeholder="magnet:?..." id="magnet_link" name="magnet"/>
-              <input className="button-primary" type="submit" value="Download"/>
+          <div className="col-xs-8 col-xs-offset-2">
+            <h3 className="center">Torrent to Dropbox</h3>
+            <form className="form-inline" onSubmit={this.addTorrent}>
+              <div className="form-group">
+
+                <input className="form-control" type="text" placeholder="Enter magnet URI" id="magnet_link" name="magnet"/>
+                <button type="submit" className="btn btn-primary">Download</button>
+              </div>
             </form>
             {store.torrents.length > 0 ?
               <TorrentStatus torrents={ store.torrents } />
