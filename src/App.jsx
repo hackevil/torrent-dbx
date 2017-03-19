@@ -14,7 +14,7 @@ const App = observer(class App extends Component {
       <div className="container">
         <DevTools />
         <div className="row">
-          <div className="col-sm-6 col-sm-offset-3">
+          <div className="col-sm-7 col-sm-offset-3">
             <h3>
               <span className="glyphicon glyphicon-save title-icon" aria-hidden="true"></span>
                  Torrent to Dropbox
@@ -24,12 +24,12 @@ const App = observer(class App extends Component {
         <div className="row">
           <form className="form-horizontal" onSubmit={this.addTorrent}>
             <div className="form-group">
-              <div className="col-sm-6 col-sm-offset-3">
+              <div className="col-sm-7 col-sm-offset-3">
                 <input className="form-control" type="text" placeholder="Enter magnet URI" id="magnet_link" name="magnet"/>
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-6 col-sm-offset-3">
+              <div className="col-sm-7 col-sm-offset-3">
                 <div className="checkbox">
                   <label>
                     <input type="checkbox"/> Upload to Dropbox
@@ -38,15 +38,15 @@ const App = observer(class App extends Component {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-6 col-sm-offset-3">
+              <div className="col-sm-7 col-sm-offset-3">
                 <button type="submit" className="btn btn-primary">Download</button>
               </div>
             </div>
           </form>
-            {store.torrents.length > 0 ?
-              <TorrentStatus torrents={ store.torrents } />
-              : null}
-          </div>
+        </div>
+        {store.torrents.length > 0 ?
+          <TorrentStatus torrents={ store.torrents } />
+          : null}
       </div>
     );
   }
